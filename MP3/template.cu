@@ -12,7 +12,7 @@
   } while (0)
 
 
-__device__ float TILE_WIDTH = 32.0;
+// __device__ float 32.0 = 32.0;
 
 
 // Compute C = A * B
@@ -22,34 +22,34 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
                                      int numCRows, int numCColumns) {
   //@@ Insert code to implement matrix multiplication here
   //@@ You have to use shared memory for this MP
-  __shared__ float subTileM[TILE_WIDTH][TILE_WIDTH];
-  __shared__ float subTileN[TILE_WIDTH][TILE_WIDTH];
+  __shared__ float subTileM[32][32];
+  __shared__ float subTileN[32][32];
 
   int bx = blockIdx.x;
   int by = blockIdx.y;
   int tx = threadIdx.x;
   int ty = threadIdx.y;
 
-  int Row = by * TILE_WIDTH + ty;
-  int Col = bx * TILE_WIDTH + tx;
+  int Row = by * 32.0 + ty;
+  int Col = bx * 32.0 + tx;
   float Pvalue = 0.0;
 
 
     
-  for (int q = 0; q < (ceil((float) numCRows / TILE_WIDTH)); ++q) {
-    if (Row < numCRows  && (q * TILE_WIDTH + tx) < numCRows) 
-      subTileM[ty][tx] = A[Row * numAColumns + q * TILE_WIDTH + tx];
+  for (int q = 0; q < (ceil((float) numCRows / 32.0)); ++q) {
+    if (Row < numCRows  && (q * 32.0 + tx) < numCRows) 
+      subTileM[ty][tx] = A[Row * numAColumns + q * 32 + tx];
     else
       subTileM[ty][tx] = 0;
     
-    if (Col < numCColumns && (q * TILE_WIDTH + ty) < numCColumns)
-      subTileN[ty][tx] = B[(q * TILE_WIDTH + ty) * numCColumns + Col];
+    if (Col < numCColumns && (q * 32.0 + ty) < numCColumns)
+      subTileN[ty][tx] = B[(q * 32 + ty) * numCColumns + Col];
     else
       subTileN[ty][tx] = 0;
     
     __syncthreads();
 
-    for (int k = 0; k < TILE_WIDTH; ++k) {
+    for (int k = 0; k < 32.0; ++k) {
       Pvalue += subTileM[ty][k] * subTileN[k][tx];
     }
     __syncthreads();
