@@ -35,15 +35,14 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
   float Pvalue = 0.0;
 
 
-    
-  for (int q = 0; q < (ceil((float) numCRows / 32.0)); ++q) {
-    if (Row < numCRows  && (q * 32.0 + tx) < numCRows) 
-      subTileM[ty][tx] = A[Row * numAColumns + q * 32 + tx];
+  for (int q = 0; q < (ceil((float)numBRows/ 32.0)); ++q) {
+    if (Row < numCRows  && (q * 32.0 + tx) < numAColumns) 
+      subTileM[ty][tx] = A[Row * numAColumns + (q * 32 + tx)];
     else
       subTileM[ty][tx] = 0;
     
-    if (Col < numCColumns && (q * 32.0 + ty) < numCColumns)
-      subTileN[ty][tx] = B[(q * 32 + ty) * numCColumns + Col];
+    if (Col < numCColumns && (q * 32.0 + ty) < numBRows)
+      subTileN[ty][tx] = B[(q * 32 + ty) * numBColumns + Col];
     else
       subTileN[ty][tx] = 0;
     
@@ -53,11 +52,11 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
       Pvalue += subTileM[ty][k] * subTileN[k][tx];
     }
     __syncthreads();
-    }
+  }
 
-    if (Row < numCRows && Col < numCColumns) {
-      C[Row * numCColumns + Col] = Pvalue;
-    }
+  if (Row < numCRows && Col < numCColumns) {
+    C[Row * numCColumns + Col] = Pvalue;
+  }
                                   
 
 }
