@@ -1,0 +1,922 @@
+(base) arcycruz@Arcys-MacBook-Pro ECE408 % rai -p Project
+Dynamic Rate Limit: 3m0s
+✱ Checking your authentication credentials.
+✱ Preparing your project directory for upload.
+✱ Uploading your project directory. This may take a few minutes.
+ 34.93 KiB / 34.93 KiB  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100.00% 128.56 KiB/s 0s
+✱ Folder uploaded. Server is now processing your submission.
+✱ Your job request has been posted to the queue.
+✱ Server has accepted your job submission and started to configure the container.
+✱ Downloading your code.
+✱ Using davidchencsl/ece408_minidnn_docker_fa23:latest as container image.
+✱ Starting container.
+✱ Running /bin/bash -c "mkdir /build/student_code && cp -rv /src/* /build/student_code"
+'/src/README.md' -> '/build/student_code/README.md'
+'/src/custom' -> '/build/student_code/custom'
+'/src/custom/cpu-new-forward.cc' -> '/build/student_code/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/build/student_code/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/build/student_code/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/build/student_code/custom/new-forward.cu'
+'/src/m1.cc' -> '/build/student_code/m1.cc'
+'/src/m2.cc' -> '/build/student_code/m2.cc'
+'/src/m3.cc' -> '/build/student_code/m3.cc'
+'/src/m3_report_template.docx' -> '/build/student_code/m3_report_template.docx'
+'/src/rai_build.yml' -> '/build/student_code/rai_build.yml'
+✱ Running /bin/bash -c "cp /ece408/project/build/weights-86.bin /build"
+✱ Running /bin/bash -c "cp -rv /src/custom/* /ece408/project/src/layer/custom"
+'/src/custom/cpu-new-forward.cc' -> '/ece408/project/src/layer/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/ece408/project/src/layer/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/ece408/project/src/layer/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/ece408/project/src/layer/custom/new-forward.cu'
+✱ Running /bin/bash -c "cmake  /ece408/project/ && make -j8"
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/cuda (found version "10.2") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /build
+[  3%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_gpu-utils.cu.o
+[  6%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o
+Scanning dependencies of target ece408net
+[  9%] Building CXX object CMakeFiles/ece408net.dir/ece408net.cc.o
+/ece408/project/src/./layer/custom/new-forward.cu(27): error: identifier "TILE_WIDTH" is undefined
+/ece408/project/src/./layer/custom/new-forward.cu(125): error: identifier "const_k" is undefined
+
+/ece408/project/src/./layer/custom/new-forward.cu(146): error: identifier "TILE_WIDTH" is undefined
+
+3 errors detected in the compilation of "/tmp/tmpxft_00000133_00000000-6_new-forward.cpp1.ii".
+CMake Error at GpuConv_generated_new-forward.cu.o.cmake:279 (message):
+  Error generating file
+  /build/src/CMakeFiles/GpuConv.dir/layer/custom/./GpuConv_generated_new-forward.cu.o
+
+
+src/CMakeFiles/GpuConv.dir/build.make:70: recipe for target 'src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o' failed
+make[2]: *** [src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+CMakeFiles/Makefile2:319: recipe for target 'src/CMakeFiles/GpuConv.dir/all' failed
+make[1]: *** [src/CMakeFiles/GpuConv.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 12%] Linking CXX static library libece408net.a
+[ 12%] Built target ece408net
+Makefile:83: recipe for target 'all' failed
+make: *** [all] Error 2
+✱ Running bash -c "./m2"   \\ Output will appear after run is complete.
+/bin/bash: ./m2: No such file or directory
+✱ The build folder has been uploaded to http://s3.amazonaws.com/files.rai-project.com/userdata/build-654581c6631e853d6b51266b.tar.gz. The data will be present for only a short duration of time.
+(base) arcycruz@Arcys-MacBook-Pro ECE408 % rai -p Project
+Dynamic Rate Limit: 30s
+✱ Checking your authentication credentials.
+✱ Preparing your project directory for upload.
+✱ Uploading your project directory. This may take a few minutes.
+ 34.58 KiB / 34.58 KiB  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100.00% 100.22 KiB/s 0s
+✱ Folder uploaded. Server is now processing your submission.
+✱ Your job request has been posted to the queue.
+✱ Server has accepted your job submission and started to configure the container.
+✱ Downloading your code.
+✱ Using davidchencsl/ece408_minidnn_docker_fa23:latest as container image.
+✱ Starting container.
+✱ Running /bin/bash -c "mkdir /build/student_code && cp -rv /src/* /build/student_code"
+'/src/README.md' -> '/build/student_code/README.md'
+'/src/custom' -> '/build/student_code/custom'
+'/src/custom/cpu-new-forward.cc' -> '/build/student_code/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/build/student_code/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/build/student_code/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/build/student_code/custom/new-forward.cu'
+'/src/m1.cc' -> '/build/student_code/m1.cc'
+'/src/m2.cc' -> '/build/student_code/m2.cc'
+'/src/m3.cc' -> '/build/student_code/m3.cc'
+'/src/m3_report_template.docx' -> '/build/student_code/m3_report_template.docx'
+'/src/rai_build.yml' -> '/build/student_code/rai_build.yml'
+✱ Running /bin/bash -c "cp /ece408/project/build/weights-86.bin /build"
+✱ Running /bin/bash -c "cp -rv /src/custom/* /ece408/project/src/layer/custom"
+'/src/custom/cpu-new-forward.cc' -> '/ece408/project/src/layer/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/ece408/project/src/layer/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/ece408/project/src/layer/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/ece408/project/src/layer/custom/new-forward.cu'
+✱ Running /bin/bash -c "cmake  /ece408/project/ && make -j8"
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/cuda (found version "10.2") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /build
+[  3%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o
+Scanning dependencies of target ece408net
+[  6%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_gpu-utils.cu.o
+[  9%] Building CXX object CMakeFiles/ece408net.dir/ece408net.cc.o
+/ece408/project/src/./layer/custom/new-forward.cu(27): error: identifier "TILE_WIDTH" is undefined
+/ece408/project/src/./layer/custom/new-forward.cu(98): error: identifier "TILE_WIDTH" is undefined
+
+2 errors detected in the compilation of "/tmp/tmpxft_00000134_00000000-6_new-forward.cpp1.ii".
+CMake Error at GpuConv_generated_new-forward.cu.o.cmake:279 (message):
+  Error generating file
+  /build/src/CMakeFiles/GpuConv.dir/layer/custom/./GpuConv_generated_new-forward.cu.o
+src/CMakeFiles/GpuConv.dir/build.make:70: recipe for target 'src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o' failed
+make[2]: *** [src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+CMakeFiles/Makefile2:319: recipe for target 'src/CMakeFiles/GpuConv.dir/all' failed
+make[1]: *** [src/CMakeFiles/GpuConv.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 12%] Linking CXX static library libece408net.a
+[ 12%] Built target ece408net
+Makefile:83: recipe for target 'all' failed
+make: *** [all] Error 2
+✱ Running bash -c "./m2"   \\ Output will appear after run is complete.
+/bin/bash: ./m2: No such file or directory
+✱ The build folder has been uploaded to http://s3.amazonaws.com/files.rai-project.com/userdata/build-6546c368631e85308aa0534b.tar.gz. The data will be present for only a short duration of time.
+(base) arcycruz@Arcys-MacBook-Pro ECE408 % rai -p Project
+Dynamic Rate Limit: 30s
+✱ Checking your authentication credentials.
+✱ Preparing your project directory for upload.
+✱ Uploading your project directory. This may take a few minutes.
+ 34.57 KiB / 34.57 KiB  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100.00% 159.95 KiB/s 0s
+✱ Folder uploaded. Server is now processing your submission.
+✱ Your job request has been posted to the queue.
+✱ Server has accepted your job submission and started to configure the container.
+✱ Downloading your code.
+✱ Using davidchencsl/ece408_minidnn_docker_fa23:latest as container image.
+✱ Starting container.
+✱ Running /bin/bash -c "mkdir /build/student_code && cp -rv /src/* /build/student_code"
+'/src/README.md' -> '/build/student_code/README.md'
+'/src/custom' -> '/build/student_code/custom'
+'/src/custom/cpu-new-forward.cc' -> '/build/student_code/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/build/student_code/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/build/student_code/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/build/student_code/custom/new-forward.cu'
+'/src/m1.cc' -> '/build/student_code/m1.cc'
+'/src/m2.cc' -> '/build/student_code/m2.cc'
+'/src/m3.cc' -> '/build/student_code/m3.cc'
+'/src/m3_report_template.docx' -> '/build/student_code/m3_report_template.docx'
+'/src/rai_build.yml' -> '/build/student_code/rai_build.yml'
+✱ Running /bin/bash -c "cp /ece408/project/build/weights-86.bin /build"
+✱ Running /bin/bash -c "cp -rv /src/custom/* /ece408/project/src/layer/custom"
+'/src/custom/cpu-new-forward.cc' -> '/ece408/project/src/layer/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/ece408/project/src/layer/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/ece408/project/src/layer/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/ece408/project/src/layer/custom/new-forward.cu'
+✱ Running /bin/bash -c "cmake  /ece408/project/ && make -j8"
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/cuda (found version "10.2") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /build
+[  3%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o
+[  6%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_gpu-utils.cu.o
+Scanning dependencies of target ece408net
+[  9%] Building CXX object CMakeFiles/ece408net.dir/ece408net.cc.o
+/ece408/project/src/./layer/custom/new-forward.cu(27): error: identifier "TILE_WIDTH" is undefined
+/ece408/project/src/./layer/custom/new-forward.cu(98): error: identifier "TILE_WIDTH" is undefined
+
+2 errors detected in the compilation of "/tmp/tmpxft_00000136_00000000-6_new-forward.cpp1.ii".
+CMake Error at GpuConv_generated_new-forward.cu.o.cmake:279 (message):
+  Error generating file
+  /build/src/CMakeFiles/GpuConv.dir/layer/custom/./GpuConv_generated_new-forward.cu.o
+src/CMakeFiles/GpuConv.dir/build.make:70: recipe for target 'src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o' failed
+make[2]: *** [src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+CMakeFiles/Makefile2:319: recipe for target 'src/CMakeFiles/GpuConv.dir/all' failed
+make[1]: *** [src/CMakeFiles/GpuConv.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 12%] Linking CXX static library libece408net.a
+[ 12%] Built target ece408net
+Makefile:83: recipe for target 'all' failed
+make: *** [all] Error 2
+✱ Running bash -c "./m2"   \\ Output will appear after run is complete.
+/bin/bash: ./m2: No such file or directory
+✱ The build folder has been uploaded to http://s3.amazonaws.com/files.rai-project.com/userdata/build-6546c39d631e8530cfcd9fe3.tar.gz. The data will be present for only a short duration of time.
+(base) arcycruz@Arcys-MacBook-Pro ECE408 % rai -p Project
+Dynamic Rate Limit: 30s
+✱ Checking your authentication credentials.
+✱ Preparing your project directory for upload.
+✱ Uploading your project directory. This may take a few minutes.
+ 34.58 KiB / 34.58 KiB  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100.00% 105.04 KiB/s 0s
+✱ Folder uploaded. Server is now processing your submission.
+✱ Your job request has been posted to the queue.
+✱ Server has accepted your job submission and started to configure the container.
+✱ Downloading your code.
+✱ Using davidchencsl/ece408_minidnn_docker_fa23:latest as container image.
+✱ Starting container.
+✱ Running /bin/bash -c "mkdir /build/student_code && cp -rv /src/* /build/student_code"
+'/src/README.md' -> '/build/student_code/README.md'
+'/src/custom' -> '/build/student_code/custom'
+'/src/custom/cpu-new-forward.cc' -> '/build/student_code/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/build/student_code/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/build/student_code/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/build/student_code/custom/new-forward.cu'
+'/src/m1.cc' -> '/build/student_code/m1.cc'
+'/src/m2.cc' -> '/build/student_code/m2.cc'
+'/src/m3.cc' -> '/build/student_code/m3.cc'
+'/src/m3_report_template.docx' -> '/build/student_code/m3_report_template.docx'
+'/src/rai_build.yml' -> '/build/student_code/rai_build.yml'
+✱ Running /bin/bash -c "cp /ece408/project/build/weights-86.bin /build"
+✱ Running /bin/bash -c "cp -rv /src/custom/* /ece408/project/src/layer/custom"
+'/src/custom/cpu-new-forward.cc' -> '/ece408/project/src/layer/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/ece408/project/src/layer/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/ece408/project/src/layer/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/ece408/project/src/layer/custom/new-forward.cu'
+✱ Running /bin/bash -c "cmake  /ece408/project/ && make -j8"
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/cuda (found version "10.2")
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /build
+[  3%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_gpu-utils.cu.o
+[  6%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o
+Scanning dependencies of target ece408net
+[  9%] Building CXX object CMakeFiles/ece408net.dir/ece408net.cc.o
+[ 12%] Linking CXX static library libece408net.a
+[ 12%] Built target ece408net
+Scanning dependencies of target GpuConv
+[ 16%] Linking CXX static library libGpuConv.a
+[ 16%] Built target GpuConv
+Scanning dependencies of target MiniDNNLib
+[ 19%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/network.cc.o
+[ 22%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/max_pooling.cc.o
+[ 25%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/ave_pooling.cc.o
+[ 29%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cust.cc.o
+[ 32%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv.cc.o
+[ 38%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cpu.cc.o
+[ 38%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/mnist.cc.o
+[ 41%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/fully_connected.cc.o
+[ 45%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/relu.cc.o
+[ 48%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/sigmoid.cc.o
+[ 51%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/softmax.cc.o
+[ 54%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/cross_entropy_loss.cc.o
+[ 58%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/mse_loss.cc.o
+[ 61%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/optimizer/sgd.cc.o
+[ 64%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/custom/cpu-new-forward.cc.o
+[ 67%] Linking CXX static library libMiniDNNLib.a
+[ 67%] Built target MiniDNNLib
+Scanning dependencies of target m3
+Scanning dependencies of target m1
+Scanning dependencies of target m3_prof
+Scanning dependencies of target final
+Scanning dependencies of target m2
+[ 70%] Building CXX object CMakeFiles/m3.dir/m3.cc.o
+[ 74%] Building CXX object CMakeFiles/m2.dir/m2.cc.o
+[ 77%] Building CXX object CMakeFiles/final.dir/final.cc.o
+[ 80%] Building CXX object CMakeFiles/m3_prof.dir/m3_prof.cc.o
+[ 83%] Building CXX object CMakeFiles/m1.dir/m1.cc.o
+[ 87%] Linking CXX executable m3_prof
+[ 87%] Built target m3_prof
+[ 90%] Linking CXX executable m3
+[ 93%] Linking CXX executable final
+[ 96%] Linking CXX executable m1
+[100%] Linking CXX executable m2
+[100%] Built target m3
+[100%] Built target final
+[100%] Built target m1
+[100%] Built target m2
+✱ Running bash -c "./m2"   \\ Output will appear after run is complete.
+Running test case 1
+B = 1 M = 3 C = 3 H = 224 W = 224 K = 3 S = 1
+Mismatch at index 1 a = 4.98663 b = 5.37159
+Test case 1 failed
+Running test case 2
+B = 2 M = 3 C = 3 H = 301 W = 301 K = 3 S = 2
+Mismatch at index 1 a = 6.70388 b = 5.7597
+Test case 2 failed
+Running test case 3
+B = 3 M = 3 C = 3 H = 196 W = 196 K = 3 S = 3
+Mismatch at index 1 a = 5.9742 b = 6.8114
+Test case 3 failed
+Running test case 4
+B = 4 M = 3 C = 3 H = 239 W = 239 K = 3 S = 4
+Mismatch at index 1 a = 7.1396 b = 4.04357
+Test case 4 failed
+✱ The build folder has been uploaded to http://s3.amazonaws.com/files.rai-project.com/userdata/build-6546cb81631e8533a9c99eeb.tar.gz. The data will be present for only a short duration of time.
+(base) arcycruz@Arcys-MacBook-Pro ECE408 % rai -p Project
+Dynamic Rate Limit: 30s
+✱ Checking your authentication credentials.
+✱ Preparing your project directory for upload.
+✱ Uploading your project directory. This may take a few minutes.
+ 34.58 KiB / 34.58 KiB  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100.00% 66.29 KiB/s 0s
+✱ Folder uploaded. Server is now processing your submission.
+✱ Your job request has been posted to the queue.
+✱ Server has accepted your job submission and started to configure the container.
+✱ Downloading your code.
+✱ Using davidchencsl/ece408_minidnn_docker_fa23:latest as container image.
+✱ Starting container.
+✱ Running /bin/bash -c "mkdir /build/student_code && cp -rv /src/* /build/student_code"
+'/src/README.md' -> '/build/student_code/README.md'
+'/src/custom' -> '/build/student_code/custom'
+'/src/custom/cpu-new-forward.cc' -> '/build/student_code/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/build/student_code/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/build/student_code/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/build/student_code/custom/new-forward.cu'
+'/src/m1.cc' -> '/build/student_code/m1.cc'
+'/src/m2.cc' -> '/build/student_code/m2.cc'
+'/src/m3.cc' -> '/build/student_code/m3.cc'
+'/src/m3_report_template.docx' -> '/build/student_code/m3_report_template.docx'
+'/src/rai_build.yml' -> '/build/student_code/rai_build.yml'
+✱ Running /bin/bash -c "cp /ece408/project/build/weights-86.bin /build"
+✱ Running /bin/bash -c "cp -rv /src/custom/* /ece408/project/src/layer/custom"
+'/src/custom/cpu-new-forward.cc' -> '/ece408/project/src/layer/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/ece408/project/src/layer/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/ece408/project/src/layer/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/ece408/project/src/layer/custom/new-forward.cu'
+✱ Running /bin/bash -c "cmake  /ece408/project/ && make -j8"
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/cuda (found version "10.2")
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /build
+[  3%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_gpu-utils.cu.o
+[  6%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o
+Scanning dependencies of target ece408net
+[  9%] Building CXX object CMakeFiles/ece408net.dir/ece408net.cc.o
+[ 12%] Linking CXX static library libece408net.a
+[ 12%] Built target ece408net
+Scanning dependencies of target GpuConv
+[ 16%] Linking CXX static library libGpuConv.a
+[ 16%] Built target GpuConv
+Scanning dependencies of target MiniDNNLib
+[ 19%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/ave_pooling.cc.o
+[ 22%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/fully_connected.cc.o
+[ 25%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv.cc.o
+[ 29%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/network.cc.o
+[ 32%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/mnist.cc.o
+[ 35%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/max_pooling.cc.o
+[ 38%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cust.cc.o
+[ 41%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cpu.cc.o
+[ 45%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/relu.cc.o
+[ 48%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/sigmoid.cc.o
+[ 51%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/softmax.cc.o
+[ 54%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/cross_entropy_loss.cc.o
+[ 58%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/mse_loss.cc.o
+[ 61%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/optimizer/sgd.cc.o
+[ 64%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/custom/cpu-new-forward.cc.o
+[ 67%] Linking CXX static library libMiniDNNLib.a
+[ 67%] Built target MiniDNNLib
+Scanning dependencies of target m3
+Scanning dependencies of target final
+Scanning dependencies of target m1
+Scanning dependencies of target m3_prof
+Scanning dependencies of target m2
+[ 70%] Building CXX object CMakeFiles/m3_prof.dir/m3_prof.cc.o
+[ 74%] Building CXX object CMakeFiles/m1.dir/m1.cc.o
+[ 77%] Building CXX object CMakeFiles/m2.dir/m2.cc.o
+[ 80%] Building CXX object CMakeFiles/m3.dir/m3.cc.o
+[ 83%] Building CXX object CMakeFiles/final.dir/final.cc.o
+[ 87%] Linking CXX executable m3_prof
+[ 93%] Linking CXX executable final
+[ 93%] Linking CXX executable m2
+[ 96%] Linking CXX executable m1
+[100%] Linking CXX executable m3
+[100%] Built target m3_prof
+[100%] Built target final
+[100%] Built target m1
+[100%] Built target m2
+[100%] Built target m3
+✱ Running bash -c "./m2"   \\ Output will appear after run is complete.
+Running test case 1
+B = 1 M = 3 C = 3 H = 224 W = 224 K = 3 S = 1
+Mismatch at index 1 a = 4.98663 b = 5.37159
+Test case 1 failed
+Running test case 2
+B = 2 M = 3 C = 3 H = 301 W = 301 K = 3 S = 2
+Mismatch at index 1 a = 6.70388 b = 5.7597
+Test case 2 failed
+Running test case 3
+B = 3 M = 3 C = 3 H = 196 W = 196 K = 3 S = 3
+Mismatch at index 1 a = 5.9742 b = 6.8114
+Test case 3 failed
+Running test case 4
+B = 4 M = 3 C = 3 H = 239 W = 239 K = 3 S = 4
+Mismatch at index 1 a = 7.1396 b = 4.04357
+Test case 4 failed
+✱ The build folder has been uploaded to http://s3.amazonaws.com/files.rai-project.com/userdata/build-6546cc5e631e85344c591ce3.tar.gz. The data will be present for only a short duration of time.
+(base) arcycruz@Arcys-MacBook-Pro ECE408 % rai -p Project
+Dynamic Rate Limit: 30s
+✱ Checking your authentication credentials.
+✱ Preparing your project directory for upload.
+✱ Uploading your project directory. This may take a few minutes.
+ 34.58 KiB / 34.58 KiB  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100.00% 145.03 KiB/s 0s
+✱ Folder uploaded. Server is now processing your submission.
+✱ Your job request has been posted to the queue.
+✱ Server has accepted your job submission and started to configure the container.
+✱ Downloading your code.
+✱ Using davidchencsl/ece408_minidnn_docker_fa23:latest as container image.
+✱ Starting container.
+✱ Running /bin/bash -c "mkdir /build/student_code && cp -rv /src/* /build/student_code"
+'/src/README.md' -> '/build/student_code/README.md'
+'/src/custom' -> '/build/student_code/custom'
+'/src/custom/cpu-new-forward.cc' -> '/build/student_code/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/build/student_code/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/build/student_code/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/build/student_code/custom/new-forward.cu'
+'/src/m1.cc' -> '/build/student_code/m1.cc'
+'/src/m2.cc' -> '/build/student_code/m2.cc'
+'/src/m3.cc' -> '/build/student_code/m3.cc'
+'/src/m3_report_template.docx' -> '/build/student_code/m3_report_template.docx'
+'/src/rai_build.yml' -> '/build/student_code/rai_build.yml'
+✱ Running /bin/bash -c "cp /ece408/project/build/weights-86.bin /build"
+✱ Running /bin/bash -c "cp -rv /src/custom/* /ece408/project/src/layer/custom"
+'/src/custom/cpu-new-forward.cc' -> '/ece408/project/src/layer/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/ece408/project/src/layer/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/ece408/project/src/layer/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/ece408/project/src/layer/custom/new-forward.cu'
+✱ Running /bin/bash -c "cmake  /ece408/project/ && make -j8"
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/cuda (found version "10.2") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /build
+[  3%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o
+Scanning dependencies of target ece408net
+[  6%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_gpu-utils.cu.o
+[  9%] Building CXX object CMakeFiles/ece408net.dir/ece408net.cc.o
+[ 12%] Linking CXX static library libece408net.a
+[ 12%] Built target ece408net
+Scanning dependencies of target GpuConv
+[ 16%] Linking CXX static library libGpuConv.a
+[ 16%] Built target GpuConv
+Scanning dependencies of target MiniDNNLib
+[ 19%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv.cc.o
+[ 22%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/network.cc.o
+[ 25%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cpu.cc.o
+[ 29%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/fully_connected.cc.o
+[ 32%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cust.cc.o
+[ 35%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/mnist.cc.o
+[ 41%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/ave_pooling.cc.o
+[ 41%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/max_pooling.cc.o
+[ 45%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/relu.cc.o
+[ 48%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/sigmoid.cc.o
+[ 51%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/softmax.cc.o
+[ 54%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/cross_entropy_loss.cc.o
+[ 58%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/mse_loss.cc.o
+[ 61%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/optimizer/sgd.cc.o
+[ 64%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/custom/cpu-new-forward.cc.o
+[ 67%] Linking CXX static library libMiniDNNLib.a
+[ 67%] Built target MiniDNNLib
+Scanning dependencies of target m3
+Scanning dependencies of target m1
+Scanning dependencies of target m3_prof
+Scanning dependencies of target m2
+Scanning dependencies of target final
+[ 70%] Building CXX object CMakeFiles/m3.dir/m3.cc.o
+[ 74%] Building CXX object CMakeFiles/m1.dir/m1.cc.o
+[ 77%] Building CXX object CMakeFiles/m3_prof.dir/m3_prof.cc.o
+[ 80%] Building CXX object CMakeFiles/final.dir/final.cc.o
+[ 83%] Building CXX object CMakeFiles/m2.dir/m2.cc.o
+[ 87%] Linking CXX executable m3_prof
+[ 90%] Linking CXX executable m1
+[ 93%] Linking CXX executable m3
+[ 96%] Linking CXX executable m2
+[100%] Linking CXX executable final
+[100%] Built target m3_prof
+[100%] Built target m1
+[100%] Built target m3
+[100%] Built target m2
+[100%] Built target final
+✱ Running bash -c "./m2"   \\ Output will appear after run is complete.
+Running test case 1
+B = 1 M = 3 C = 3 H = 224 W = 224 K = 3 S = 1
+Running test case 2
+B = 2 M = 3 C = 3 H = 301 W = 301 K = 3 S = 2
+Running test case 3
+B = 3 M = 3 C = 3 H = 196 W = 196 K = 3 S = 3
+Running test case 4
+B = 4 M = 3 C = 3 H = 239 W = 239 K = 3 S = 4
+All test cases passed
+Test batch size: 10000
+Loading fashion-mnist data...Done
+Loading model...Done
+Conv-GPU==
+Layer Time: 699.251 ms
+Op Time: 16.8718 ms
+Conv-GPU==
+Layer Time: 546.645 ms
+Op Time: 62.8442 ms
+
+Test Accuracy: 0.8714
+✱ The build folder has been uploaded to http://s3.amazonaws.com/files.rai-project.com/userdata/build-6546cd86631e8534f3c3783b.tar.gz. The data will be present for only a short duration of time.
+(base) arcycruz@Arcys-MacBook-Pro ECE408 % rai -p . --queue=rai_amd64_exclusive queued
+✱ Checking your authentication credentials.
+Error: the spec file [/Users/arcycruz/Desktop/uiuc/FA23/ECE408/rai_build.yml] does not exist
+the spec file [/Users/arcycruz/Desktop/uiuc/FA23/ECE408/rai_build.yml] does not exist
+2023/11/04 18:10:08 error: the spec file [/Users/arcycruz/Desktop/uiuc/FA23/ECE408/rai_build.yml] does not exist
+(base) arcycruz@Arcys-MacBook-Pro ECE408 % rai -p Project --queue=rai_amd64_exclusive queued 
+✱ Checking your authentication credentials.
+✱ Preparing your project directory for upload.
+✱ Uploading your project directory. This may take a few minutes.
+ 34.61 KiB / 34.61 KiB  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100.00% 58.61 KiB/s 0s
+✱ Folder uploaded. Server is now processing your submission.
+✱ Your job request has been posted to the queue.
++---------------------+-------+
+|        QUEUE        | COUNT |
++---------------------+-------+
+| rai_amd64_exclusive |   8   |
++---------------------+-------+
+(base) arcycruz@Arcys-MacBook-Pro ECE408 % rai --queue rai_amd64_exclusive -p Project          
+Dynamic Rate Limit: 3m0s
+✱ Checking your authentication credentials.
+✱ Preparing your project directory for upload.
+✱ Uploading your project directory. This may take a few minutes.
+ 34.61 KiB / 34.61 KiB  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  100.00% 174.57 KiB/s 0s
+✱ Folder uploaded. Server is now processing your submission.
+✱ Your job request has been posted to the queue.
+✱ Server has accepted your job submission and started to configure the container.
+✱ Downloading your code.
+✱ Using davidchencsl/ece408_minidnn_docker_fa23:latest as container image.
+✱ Starting container.
+✱ Running /bin/bash -c "mkdir /build/student_code && cp -rv /src/* /build/student_code"
+'/src/README.md' -> '/build/student_code/README.md'
+'/src/custom' -> '/build/student_code/custom'
+'/src/custom/cpu-new-forward.cc' -> '/build/student_code/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/build/student_code/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/build/student_code/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/build/student_code/custom/new-forward.cu'
+'/src/m1.cc' -> '/build/student_code/m1.cc'
+'/src/m2.cc' -> '/build/student_code/m2.cc'
+'/src/m3.cc' -> '/build/student_code/m3.cc'
+'/src/m3_report_template.docx' -> '/build/student_code/m3_report_template.docx'
+'/src/rai_build.yml' -> '/build/student_code/rai_build.yml'
+✱ Running /bin/bash -c "cp /ece408/project/build/weights-86.bin /build"
+✱ Running /bin/bash -c "cp -rv /src/custom/* /ece408/project/src/layer/custom"
+'/src/custom/cpu-new-forward.cc' -> '/ece408/project/src/layer/custom/cpu-new-forward.cc'
+'/src/custom/cpu-new-forward.h' -> '/ece408/project/src/layer/custom/cpu-new-forward.h'
+'/src/custom/gpu-new-forward.h' -> '/ece408/project/src/layer/custom/gpu-new-forward.h'
+'/src/custom/new-forward.cu' -> '/ece408/project/src/layer/custom/new-forward.cu'
+✱ Running /bin/bash -c "cmake /ece408/project/ && make -j8"
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found CUDA: /usr/local/cuda (found version "10.2")
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /build
+Scanning dependencies of target ece408net
+[  3%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_gpu-utils.cu.o
+[  6%] Building NVCC (Device) object src/CMakeFiles/GpuConv.dir/layer/custom/GpuConv_generated_new-forward.cu.o
+[  9%] Building CXX object CMakeFiles/ece408net.dir/ece408net.cc.o
+[ 12%] Linking CXX static library libece408net.a
+[ 12%] Built target ece408net
+Scanning dependencies of target GpuConv
+[ 16%] Linking CXX static library libGpuConv.a
+[ 16%] Built target GpuConv
+Scanning dependencies of target MiniDNNLib
+[ 19%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/ave_pooling.cc.o
+[ 22%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/network.cc.o
+[ 25%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cpu.cc.o
+[ 29%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/fully_connected.cc.o
+[ 32%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/mnist.cc.o
+[ 35%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv_cust.cc.o
+[ 38%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/max_pooling.cc.o
+[ 41%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/conv.cc.o
+[ 45%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/relu.cc.o
+[ 48%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/sigmoid.cc.o
+[ 51%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/softmax.cc.o
+[ 54%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/cross_entropy_loss.cc.o
+[ 58%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/loss/mse_loss.cc.o
+[ 61%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/optimizer/sgd.cc.o
+[ 64%] Building CXX object src/CMakeFiles/MiniDNNLib.dir/layer/custom/cpu-new-forward.cc.o
+[ 67%] Linking CXX static library libMiniDNNLib.a
+[ 67%] Built target MiniDNNLib
+Scanning dependencies of target m1
+Scanning dependencies of target m3
+Scanning dependencies of target final
+Scanning dependencies of target m3_prof
+Scanning dependencies of target m2
+[ 70%] Building CXX object CMakeFiles/m3.dir/m3.cc.o
+[ 74%] Building CXX object CMakeFiles/m1.dir/m1.cc.o
+[ 77%] Building CXX object CMakeFiles/m3_prof.dir/m3_prof.cc.o
+[ 80%] Building CXX object CMakeFiles/m2.dir/m2.cc.o
+[ 83%] Building CXX object CMakeFiles/final.dir/final.cc.o
+[ 87%] Linking CXX executable m3_prof
+[ 90%] Linking CXX executable m1
+[ 93%] Linking CXX executable m2
+[ 96%] Linking CXX executable final
+[100%] Linking CXX executable m3
+[100%] Built target m3_prof
+[100%] Built target m1
+[100%] Built target final
+[100%] Built target m3
+[100%] Built target m2
+✱ Running bash -c "nsys profile --stats=true ./m2"   \\ Output will appear after run is complete.
+**** collection configuration ****
+        force-overwrite = false
+        stop-on-exit = true
+        export_sqlite = true
+        stats = true
+        capture-range = none
+        stop-on-range-end = false
+        Beta: ftrace events:
+        ftrace-keep-user-config = false
+        trace-GPU-context-switch = false
+        delay = 0 seconds
+        duration = 0 seconds
+        kill = signal number 15
+        inherit-environment = true
+        show-output = true
+        trace-fork-before-exec = false
+        sample_cpu = true
+        backtrace_method = LBR
+        wait = all
+        trace_cublas = false
+        trace_cuda = true
+        trace_cudnn = false
+        trace_nvtx = true
+        trace_mpi = false
+        trace_openacc = false
+        trace_vulkan = false
+        trace_opengl = true
+        trace_osrt = true
+        osrt-threshold = 0 nanoseconds
+        cudabacktrace = false
+        cudabacktrace-threshold = 0 nanoseconds
+        profile_processes = tree
+        application command = ./m2
+        application arguments = 
+        application working directory = /build
+        NVTX profiler range trigger = 
+        NVTX profiler domain trigger = 
+        environment variables:
+        Collecting data...
+Running test case 1
+B = 1 M = 3 C = 3 H = 224 W = 224 K = 3 S = 1
+Running test case 2
+B = 2 M = 3 C = 3 H = 301 W = 301 K = 3 S = 2
+Running test case 3
+B = 3 M = 3 C = 3 H = 196 W = 196 K = 3 S = 3
+Running test case 4
+B = 4 M = 3 C = 3 H = 239 W = 239 K = 3 S = 4
+All test cases passed
+Test batch size: 10000
+Loading fashion-mnist data...Done
+Loading model...Done
+Conv-GPU==
+Layer Time: 622.46 ms
+Op Time: 16.9148 ms
+Conv-GPU==
+Layer Time: 611.461 ms
+Op Time: 62.9153 ms
+
+Test Accuracy: 0.8714
+
+        Generating the /build/report1.qdstrm file.
+        Capturing raw events...
+
+        **** WARNING: The collection generated 658991 total events. ****
+        Importing this QDSTRM file into the NVIDIA Nsight Systems GUI may take several minutes to complete.
+
+        Capturing symbol files...
+        Saving diagnostics...
+        Saving qdstrm file to disk...
+        Finished saving file.
+
+
+Importing the qdstrm file using /opt/nvidia/nsight-systems/2019.5.2/host-linux-x64/QdstrmImporter.
+
+Importing...
+
+Importing [==================================================100%]
+Saving report to file "/build/report1.qdrep"
+Report file saved.
+Please discard the qdstrm file and use the qdrep file instead.
+
+Removed /build/report1.qdstrm as it was successfully imported.
+Please use the qdrep file instead.
+
+Exporting the qdrep file to SQLite database using /opt/nvidia/nsight-systems/2019.5.2/host-linux-x64/nsys-exporter.
+
+Exporting 658885 events:
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+
+Exported successfully to
+/build/report1.sqlite
+
+Generating CUDA API Statistics...
+CUDA API Statistics (nanoseconds)
+
+Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name                                                                            
+-------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
+   79.0      1142697218          20      57134860.9           28546       564082911  cudaMemcpy                                                                      
+   13.7       198467082          20       9923354.1            3950       194253398  cudaMalloc                                                                      
+    5.5        79843804          16       4990237.8             906        62882677  cudaDeviceSynchronize                                                           
+    1.1        15924008          20        796200.4            3954        12500921  cudaFree                                                                        
+    0.6         9011063          10        901106.3           23868         8707693  cudaLaunchKernel                                                                
+
+
+
+
+Generating CUDA Kernel Statistics...
+
+Generating CUDA Memory Operation Statistics...
+CUDA Kernel Statistics (nanoseconds)
+
+Time(%)      Total Time   Instances         Average         Minimum         Maximum  Name                                                                            
+-------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
+  100.0        79799906           6      13299984.3            7328        62875606  conv_forward_kernel                                                             
+    0.0            2656           2          1328.0            1312            1344  prefn_marker_kernel                                                             
+    0.0            2624           2          1312.0            1280            1344  do_not_remove_this_kernel                                                       
+
+
+CUDA Memory Operation Statistics (nanoseconds)
+
+Time(%)      Total Time  Operations         Average         Minimum         Maximum  Name                                                                            
+-------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
+   93.5      1062343586           6     177057264.3           12704       563180731  [CUDA memcpy DtoH]                                                              
+    6.5        73422193          14       5244442.4            1152        38782330  [CUDA memcpy HtoD]                                                              
+
+
+CUDA Memory Operation Statistics (KiB)
+
+            Total      Operations            Average            Minimum            Maximum  Name                                                                            
+-----------------  --------------  -----------------  -----------------  -----------------  --------------------------------------------------------------------------------
+        1723922.0               6           287320.4            148.535          1000000.0  [CUDA memcpy DtoH]                                                              
+         545660.0              14            38975.7              0.004           288906.0  [CUDA memcpy HtoD]                                                              
+
+
+
+
+Generating Operating System Runtime API Statistics...
+Operating System Runtime API Statistics (nanoseconds)
+
+Time(%)      Total Time       Calls         Average         Minimum         Maximum  Name                                                                            
+-------  --------------  ----------  --------------  --------------  --------------  --------------------------------------------------------------------------------
+   33.3    103193315295        1045      98749584.0           33014       129001121  poll                                                                            
+   33.3    103149453868        1045      98707611.4           26311       100455193  sem_timedwait                                                                   
+   21.0     65152170640           2   32576085320.0     23776211944     41375958696  pthread_cond_wait                                                               
+   12.3     38009732003          76     500128052.7       500061885       500385245  pthread_cond_timedwait                                                          
+    0.0       110462864         943        117139.8            1033        16899144  ioctl                                                                           
+    0.0        33800867       13942          2424.4            1143           19425  read                                                                            
+    0.0         2828835          98         28865.7            1289         1102487  mmap                                                                            
+    0.0         1109679         101         10986.9            4378           25353  open64                                                                          
+    0.0          564996           3        188332.0            1134          561537  fwrite                                                                          
+    0.0          330557          19         17397.7            3226           49299  fopen64                                                                         
+    0.0          293099           5         58619.8           39395           71481  pthread_create                                                                  
+    0.0          137368           3         45789.3           42304           50723  fgets                                                                           
+    0.0          116611          20          5830.6            1453           24236  munmap                                                                          
+    0.0          113164          26          4352.5            1157           43643  fopen                                                                           
+    0.0          106492          17          6264.2            1280           19414  fflush                                                                          
+    0.0           79074          26          3041.3            1022            7410  fclose                                                                          
+    0.0           73011          15          4867.4            2325            7406  write                                                                           
+    0.0           32817           5          6563.4            3768            9050  open                                                                            
+    0.0           25672           1         25672.0           25672           25672  pthread_mutex_lock                                                              
+    0.0           14333           2          7166.5            4432            9901  pthread_cond_signal                                                             
+    0.0           13618           2          6809.0            5738            7880  socket                                                                          
+    0.0            8123           1          8123.0            8123            8123  pipe2                                                                           
+    0.0            7442           1          7442.0            7442            7442  connect                                                                         
+    0.0            2538           2          1269.0            1222            1316  fcntl                                                                           
+    0.0            1815           1          1815.0            1815            1815  bind                                                                            
+
+
+
+
+Generating NVTX Push-Pop Range Statistics...
+NVTX Push-Pop Range Statistics (nanoseconds)
+✱ The build folder has been uploaded to http://s3.amazonaws.com/files.rai-project.com/userdata/build-6546d04f631e8537654afd6b.tar.gz. The data will be present for only a short duration of time.
